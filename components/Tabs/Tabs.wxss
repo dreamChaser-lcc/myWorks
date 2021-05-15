@@ -1,0 +1,28 @@
+/* components/Tabs/Tabs.wxss */
+.tabs{
+  line-height: 30px;
+}
+.tabs_title{
+  display: flex;
+  justify-content: space-around;
+  /* padding: 10rpx; */
+  background-color: #fff;
+  /* margin-bottom:20px; */
+  line-height: 35px;
+}
+.tabs_item{
+  /* flex: 1; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.active{
+  color: rgb(45, 97, 135);
+  border-bottom: 5rpx solid currentColor;
+}
+/* .tabs_content{} */
+page{
+  /* background: #9ab3f5; */
+  background: linear-gradient(#0f3057,#FFFFFF, #F1F1F1,#FFFFFF, #FFFFFF);
+  background-repeat:no-repeat;
+}

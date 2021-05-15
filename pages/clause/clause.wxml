@@ -1,0 +1,9 @@
+<!--pages/clause/clause.wxml-->
+<view class="head">
+       <view style="width:300px;display:flex;justify-content:center;">
+        <image src="/pages/image/wxCode.jpg" style="width:300px;height:300px"></image>
+        </view>
+        <view>
+        <text>关于系统\n当前版本为1.1.0</text>
+        </view>
+</view>

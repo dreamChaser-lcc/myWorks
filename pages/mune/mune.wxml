@@ -1,0 +1,14 @@
+<!--pages/mune/mune.wxml-->
+
+<!-- 
+    路径前加/且。都是/
+    url=/相对路径/...
+    已被tabBar绑定的界面，跳转不了！！！（设置跳转方式可以解决，默认跳转不可以）
+ -->
+    <navigator url="/pages/logs/logs">跳转一下</navigator>
+<!-- 父主键向子组件传递tabs数组 -->
+    <Tabs tabs="{{tabs}}" binditemChange="handleItemChange" ></Tabs>
+
+
+
+

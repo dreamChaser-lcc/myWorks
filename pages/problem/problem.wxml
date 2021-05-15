@@ -1,0 +1,22 @@
+<!--pages/problem/problem.wxml-->
+<view class="container">
+    <view class="card">
+        <view class="row">
+            <text>1.如何绑定设备</text>
+            <view class="content">
+              <text>我的->个人资料->填写设备号->绑定成功</text>
+            </view>
+       </view> 
+    </view>
+    <view class="card">
+        <view class="row">
+            <text>2.显示设备异常或不存在</text>
+            <view class="content">
+              <text>①我的->个人资料->确认设备号->绑定成功</text>
+            </view>
+            <view class="content">
+              <text>②若失败，联系客服或意见反馈</text>
+            </view>
+       </view> 
+    </view>
+</view>

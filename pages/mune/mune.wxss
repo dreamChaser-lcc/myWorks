@@ -1,0 +1,6 @@
+/* pages/mune/mune.wxss */
+.s {
+font-size: 200px;
+display: block;
+
+}

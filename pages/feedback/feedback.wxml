@@ -1,0 +1,20 @@
+<!--pages/feedback/feedback.wxml-->
+<text>请选择你遇到的问题类型:</text>
+	<view class="card" bindtap="handleType">
+		<text>{{fbtype}}</text>
+		<image class="right" src="./image/feedback_type.png"></image>
+	</view>
+	<text>详细描述:</text>
+	<textarea id="content" class="describe" adjust-position="true"  placeholder="请在500字内描述您遇到的情况，比如传感器数据错误，以便我们提供更佳的帮助" bindblur="textValue" value="{{content}}"></textarea>
+	
+	<text>您的联系方式（邮箱/手机号）:</text>
+	<van-field
+            placeholder="邮箱/手机号"
+            placeholder-style="color:red"
+            value="{{contacts}}"
+						size="large"
+						id="contactsArea"
+            bind:blur='textValue'
+            clearable 
+          />
+	<button style="width:80%;background:#256EE1;margin-top:20px;border-radius:15px" bindtap="handleSaveBtu" disabled="{{isDisabled}}" type="primary">提交</button>

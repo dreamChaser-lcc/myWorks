@@ -1,0 +1,19 @@
+<!--components/Tabs/Tabs.wxml-->
+<view> {{aaa}}</view>
+<view class="tabs"> 
+  <view class="tabs_title">
+    <view
+    wx:for="{{tabs}}"
+    wx:key="name"
+    class="tabs_item {{item.isActive?'active':''}}"
+    bindtap="hanldeItemTap"
+    data-index="{{index}}"  
+    url="/pages/about/about"
+    > <!-- {{index}}获取到的是循环数组的目录下标值 -->
+    {{item.name}}<!-- item是固定的属性名 -->
+    </view>
+  </view>
+  <view class="tabs_content">
+  <slot></slot>
+  </view>
+</view>

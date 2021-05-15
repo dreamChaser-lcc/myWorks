@@ -1,0 +1,58 @@
+/* components/current_state/current_state.wxss */
+.box1{
+  margin-top: 60px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+ }
+.box{
+ margin-top: 20px;
+ display: flex;
+ justify-content:space-around;
+ align-items: center;
+}
+.bind{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.item{
+  height: 100px;
+  width:300rpx;
+  border-radius:20px;
+  background:linear-gradient(#709fb0,rgba(2, 120, 174,0.2));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
+  align-content:center;
+}
+.switchBox{
+  height: 300px;
+  width: 740rpx;
+  margin-top:30px;
+  margin-left:5rpx; 
+  align-items: center;
+  /* background-color:#709fb0; */
+  /* 设置完使用的色调 */
+  background:linear-gradient(#709fb0,rgba(2, 120, 174,0.2)); 
+  border-radius:20px;
+  /* padding-top: 50px; */
+}
+.switchBox .targetBox{
+   display: flex;
+   justify-content: space-around;
+}
+.switchBox .target{
+    margin-top:20px;
+    color:white;
+}
+.switchBox .img{
+  width:15px;
+  height:15px
+}
+.switchBox .warn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

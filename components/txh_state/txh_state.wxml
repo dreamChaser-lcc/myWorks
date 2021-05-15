@@ -1,0 +1,10 @@
+<!--components/txh_state/txh_state.wxml-->
+
+<view class="container">
+  <view class="charts">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"  > </ec-canvas> 
+  
+  </view>
+  <view>温度状态</view>
+</view> 
+

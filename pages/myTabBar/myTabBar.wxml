@@ -1,0 +1,80 @@
+<view class="container">
+	<view class="userinfo">
+            <button wx:if="{{!hasUserInfo && canIUse}}"  bindtap="getUserProfile"> 点击授权登录 </button>
+            <block wx:else>
+              <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+              <text class="userinfo-nickname">欢迎 {{userInfo.nickName}} 使用智能家居系统</text>
+            </block>
+	</view>
+</view>
+<!-- 轮播图 -->
+<view class="carousel">
+    <swiper indicator-dots="true" indicator-color="#f4f4f4" indicator-active-color="#4eb8b8" autoplay="true" interval='2000' circular='true'>
+            <block wx:for="{{swiperImges}}" wx:key="id">
+              <swiper-item> 
+                    <image src="{{item.img}}"></image>
+              </swiper-item>
+            </block>
+    </swiper>
+</view>
+<view class='dirvers'></view>
+<!-- 表格菜单 -->
+<view style="background:#fff" >
+    <van-grid column-num="3" >
+      <van-grid-item
+        icon="{{item.icon}}" 
+        url="{{item.url}}" 
+        text="{{item.text}}" 
+        bind:click="{{item.onclick}}"
+        wx:key="index"
+        wx:for="{{gird_option }}"/>
+    </van-grid>
+</view>
+
+<!-- 
+<view class='ceil'>
+	<navigator class='ceil-item option'  url='../info/info'>
+   <image src="./image/my_info.png"></image>
+		<text>个人资料</text>
+   
+     <view class="option_right">点击填写个人资料、绑定设备
+    </view>
+	</navigator>
+	<navigator class='ceil-item option' url='/pages/feedback/feedback'>
+   <image src="./image/my_feedback.png"></image>
+		<text>意见反馈</text>
+     <view class="option_right">
+     用不爽说两句
+    </view>
+  
+	</navigator>
+</view>
+
+<view class='dirvers'></view>
+
+<view class='ceil'>
+	<navigator class='ceil-item option' url="../problem/problem">
+    <image src="./image/my_problem.png"></image>
+		<text>常见问题</text>
+     <view class="option_right">
+      遇到问题了吗？点我看看
+    </view>
+  
+	</navigator>
+	<navigator class='ceil-item option' url="../clause/clause">
+     <image src="./image/my_clause.png"></image>
+		<text>关于</text>
+    <view class="option_right">
+      关于该系统
+    </view>
+	</navigator>
+</view>
+
+<view class='dirvers'></view>
+<view class='ceil' bindtap="handlePhone">
+	<view class='ceil-item option'>
+   <image src="./image/my_setting.png"></image>
+		<text>客服</text>
+    <view class="option_right">点击联系客服</view>
+	</view>
+</view> -->

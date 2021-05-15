@@ -1,0 +1,68 @@
+/* components/ls_state/ls_state.wxss */
+/* .table{
+  border: 1px solid red;
+} */
+.head{
+  color:red !important;
+}
+.t_head
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+ 
+}
+.tr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  margin-bottom: 5px;
+}
+.th{
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.td{
+  flex: 2;
+  /* background-color: cyan; */
+  text-align: center;
+  line-height: 30px;
+  border-right:1px solid #F0F0F0;
+  border-left: 1px solid #F0F0F0;
+  border-bottom: 1px solid #F0F0F0;
+}
+.td_middle{
+  border-right:1px solid #F0F0F0;
+  border-left: 1px solid #F0F0F0;
+  
+}
+.td_z{
+  flex: 3;
+  text-align: center;
+}
+.bg{
+ background-color: rgba(45, 97, 135,0.1);
+ color: black;
+}
+.foot{
+    margin-top:50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+  /* .first{
+      flex: 1;
+  }
+  .middle{
+      flex: 1;
+     
+  }
+  .last{
+    
+    flex: 1;
+  } */

@@ -1,0 +1,10 @@
+/* components/txh_state/txh_state.wxss */
+.container{
+  
+  height:350px;
+  width:750rpx;
+}
+.charts{
+  height:350px;
+  width:750rpx;
+}

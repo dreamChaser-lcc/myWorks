@@ -1,0 +1,9 @@
+<!--pages/current_state/current_state.wxml-->
+
+<!-- <current_state>  </current_state> -->
+<!-- <ls_state></ls_state> -->
+ <!-- <txh_state></txh_state>  -->
+ <!-- <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec}}" ></ec-canvas> -->
+ <!-- <ls2_state></ls2_state>  -->
+<!-- <Gz_state></Gz_state> -->
+ <Zl_state></Zl_state> 

@@ -1,0 +1,24 @@
+<van-notice-bar
+  left-icon="volume-o"
+  speed="30"
+  scrollable="{{ false }}"
+  text="点击可查看消息详情"
+/>
+<view>
+<van-collapse value="{{ detail }}" bind:change="onChange">
+  <van-collapse-item wx:for="{{msg}}" wx:key="id" title="来自管理员{{item.admin}}的消息" icon="chat-o">    
+    <van-row>
+      <van-col span="4">反馈消息:</van-col>
+      <van-col span="18" custom-class="left"> {{item.content}}</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="4">回复内容:</van-col>
+      <van-col span="20" custom-class="left"> {{item.fbcontent}}</van-col>
+    </van-row>
+    <van-row>
+      <van-col span="4">回复时间:</van-col>
+      <van-col span="20" custom-class="left"> {{item.time}}</van-col>
+    </van-row>
+  </van-collapse-item>
+</van-collapse>
+</view>

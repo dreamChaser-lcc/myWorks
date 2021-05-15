@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "Tabs":"/components/Tabs/Tabs",
+    "current_state": "/components/current_state/current_state",
+    "ls_state" : "/components/ls_state/ls_state",
+    "ls2_state" : "/components/ls2_state/ls2_state",
+    "txh_state" : "/components/txh_state/txh_state",
+    "Gz_state" : "/components/Gz_state/Gz_state"
+  },
+  "navigationBarTitleText": "设备中心"
+}

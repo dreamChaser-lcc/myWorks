@@ -1,0 +1,82 @@
+<!--pages/info/info.wxml-->
+<view class="container">
+  <!-- 通告 -->
+  <van-notice-bar
+  left-icon="volume-o"
+  speed="30"
+  text="请联系管理员,获得设备ID,填写资料与设备进行绑定"
+/>
+  <!-- 表单 -->
+        <van-cell-group>
+          <van-field
+            left-icon="user-circle-o"
+            right-icon
+            label="用户名"
+            size="large"
+            custom-style="height:6em"
+            center
+            value= "{{ info.username }}"
+            input-align="right"
+            readonly
+            right
+          />
+          <van-field
+            left-icon="success"
+            right-icon
+            label="绑定设备ID"
+            placeholder="请输入设备ID"
+            placeholder-style="color:red"
+            custom-style="height:5em;color:red"
+            center
+            size="large"
+            value= "{{info.eqName}}"
+            input-align="right"
+            id="eqName"
+            bind:blur='handleBlurIpt'
+            clearable
+            right
+          />
+          <van-field
+            left-icon="location-o"
+            right-icon
+            label="常住地址"
+            placeholder="请输入常住地址"
+            placeholder-style="color:red"
+            custom-style="height:5em;color:green"
+            center
+            size="large"
+            value= "{{info.address}}"
+            id="address"
+            bind:blur='handleBlurIpt'
+            input-align="right"
+            clearable
+            right
+          />
+          <van-field
+            left-icon="phone=o"
+            right-icon
+            id="contacts"
+            label="联系方式"
+            placeholder="请输入联系方式"
+            placeholder-style="color:red"
+            custom-style="height:5em;color:blue"
+            center
+            value="{{info.contacts}}"
+            size="large"
+            bind:blur='handleBlurIpt'
+            input-align="right"
+            clearable
+            right
+          />
+          
+      
+      </van-cell-group>
+      <!--提交按钮  -->
+    <view style="margin-top:55rpx">
+      <van-row>
+        <van-col span="8" offset="6">
+          <van-button  size="normal" bind:click="handleSaveBtu" type="info">保存</van-button>
+        </van-col>
+      </van-row>
+    </view>
+</view>

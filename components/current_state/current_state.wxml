@@ -1,0 +1,92 @@
+<!--components/current_state/current_state.wxml-->
+<view class="box">
+	<view class="item" style="border-radius:150px">
+		<view>
+			<view class="bind">
+				<view>
+					<image src="./image/wd.png" class="img" style="width:50px;height:45px"></image>
+				</view>
+				<view style="font-size:30px;color:white">{{equipmentData.wd}}°C</view>
+			</view>
+			<view style="text-align:center;position:relative;">室内温度</view>
+		</view>
+	</view>
+</view>
+<view class="box">
+	<view class="item">
+		<view>
+			<view class="bind">
+				<view style="flex:1">
+					<image src="./image/humidity.png" class="img" style="width:30px;height:30px;"></image>
+				</view>
+				<view style="font-size:30px;color:white;flex:2;line-height:45px;">{{equipmentData.hum}}%</view>
+			</view>
+			<view style="text-align:center;position:relative;">室内湿度</view>
+		</view>
+	</view>
+	<view class="item">
+		<view>
+			<view class="bind">
+				<view style="flex:1">
+					<image src="./image/smoke.png" class="img" style="width:30px;height:30px;"></image>
+				</view>
+				<view style="font-size:30px;color:white;flex:2;line-height:45px;">{{equipmentData.smoke}}ppm</view>
+			</view>
+			<view style="text-align:center;position:relative;">烟雾浓度</view>
+		</view>
+	</view>
+</view>
+
+<view class="switchBox">
+	<view class="targetBox">
+		<view class="target">
+			<image src="./image/switch_connect.png" class="img" /> 状态：
+			<span >{{!isBind?"不可连接":"可连接"}}</span>
+			
+		</view>
+		<view class="target">
+			<view class="page-section page-section-gap">
+				连接开关
+				<switch id="switchWd" disabled="{{!isBind}}" checked="{{connectState}}" bindchange="onClick_connect" name="switch" />
+			</view>
+		</view>
+	</view>
+
+	<view class="targetBox">
+		<view class="target">
+			<image src="./image/switch-wd.png" class="img" /> 温度：
+			<span style="{{equipmentData.wd<18||equipmentData.wd>28?'color:red':''}}" wx:if="{{isBind}}">{{equipmentData.wd<18||equipmentData.wd>28?"非推荐":"推荐值"}} 
+			</span>
+			<span wx:else>不可查看</span>
+		</view>
+		<view class="target">
+			<view class="page-section page-section-gap">
+				风扇开关
+				<switch id="switchWd" disabled="{{!isBind}}" checked="{{fanSwitch}}" bindchange="onClick_FanSwitch" name="switch" />
+			</view>
+		</view>
+	</view>
+		<view class="targetBox">
+		<view class="target">
+			<image src="./image/switch_led.png" class="img" /> 状态：
+			<span wx:if="{{isBind}}">{{ledSwitch?"已开启":"已关闭"}}</span>
+			<span wx:else>不可查看</span>
+		</view>
+		<view class="target">
+			<view class="page-section page-section-gap">
+				小灯开关
+				<switch id='switchGz' disabled="{{!isBind}}" checked="{{ledSwitch}}" bindchange="onClick_PubMsg"  name="switch" />
+			</view>
+		</view>
+	</view>
+	<view class="target">
+		<view class="warn">
+			<image src="./image/switch-green.png" class="img" /> 推荐室内温度18~28°C
+		</view>
+	</view>
+    <view class="target">
+		<view class="warn">
+			<image src="./image/switch-green.png" class="img" /> 正常烟雾浓度0~800ppm
+		</view>
+	</view>
+</view>

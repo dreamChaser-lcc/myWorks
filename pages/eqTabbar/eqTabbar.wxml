@@ -1,0 +1,18 @@
+<Tabs tabs="{{tabs}}"  binditemChange="handleItemChange">
+	<block wx:if="{{tabs[0].isActive}}">
+		<current_state equipmentData="{{equipmentData}}"></current_state>
+	</block>
+	<block wx:if="{{tabs[1].isActive}}">
+		<ls_state dataList="{{dataList}}"></ls_state>
+	</block>
+	<block wx:if="{{tabs[2].isActive}}" >
+		<ls2_state dataList="{{dataList}}" ></ls2_state>
+	</block>
+ <block wx:if="{{tabs[3].isActive}}">
+	 <view style="margin-top:10px"></view>
+		<txh_state wx:if="{{fal}}" legendWd="{{legendWd}}"></txh_state>
+		<Gz_state legendGz="{{legendGz}}"></Gz_state>
+		<!-- <Zl_state legendZl="{{legendZl}}"></Zl_state> --> 
+	</block>
+</Tabs>
+<van-toast id="van-toast" />

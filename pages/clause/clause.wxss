@@ -1,0 +1,14 @@
+/* pages/clause/clause.wxss */
+page{
+  background-color: #f1f1f1;
+}
+.head{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  height: 600px;
+  margin: 20px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background-color: #fff;
+}

@@ -1,0 +1,34 @@
+<!--components/ls_state/ls_state.wxml-->
+<view wx:for="{{dataList}}" wx:key="sj">
+      <van-panel header-class="{{item.wd<18||item.wd>28?'head':''}}"  title="温度{{item.wd}}°C" desc="{{item.time}}" status="{{item.eqName}}">
+    </van-panel>
+</view>
+<!-- <view class="table">
+    <view class="t_head bg">
+      <view class="th">设备</view>
+      <view class="th ">温度</view>
+      <view class="th">时间</view>
+    </view>
+    <view wx:for="{{dataList}}" wx:key="sj">
+        <view class="tr">
+          <view class="td">{{item.eqName}}</view>
+          <view class="td td_middle">{{item.wd}}°C</view>
+          <view class="td">{{item.time}}</view>
+        </view>
+    </view>
+</view> -->
+<!-- <view class="foot">
+        <view class="first">
+            <button type="warn" size="mini" bindtap="prePage">上一页</button>
+        </view>
+         <view class="middle"> 
+          <p>当前页数{{currentPage}}/{{totalPage}}</p>
+        </view> 
+         <view class="last"> 
+         <button type="warn" size="mini" bindtap="nextPage">下一页</button>
+        </view> 
+    
+</view>
+    -->
+
+

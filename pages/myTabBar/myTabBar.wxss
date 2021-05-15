@@ -1,0 +1,99 @@
+.container {
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+  /* background-color: black; */
+  /* background: linear-gradient(#0f3057,#FFFFFF, #F1F1F1,#FFFFFF, #FFFFFF); */
+  background-image: linear-gradient( #3b3f43, #716144, #a78541, #deac38);
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+}
+.userinfo {
+  display: flex; 
+  /* flex-direction: column;  */
+  align-items: center; 
+  /* background-color: black; */
+ height:150px;
+ margin-bottom: 0.5rem;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 100%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+}
+.carousel{
+    width: 100%;
+    border-radius: 0.1rem;
+}
+.carousel image{
+  width: 750rpx;
+  border-radius: 0.1rem;
+}
+
+.refreshBtu{
+  border-radius: 25px; 
+}
+
+.ceil {
+  font-size: 16px;
+  background-color: white;
+}
+.ceil-item {
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #ccc;
+}
+.ceil image{
+  width:30rpx;height:30rpx
+}
+
+
+.avatar image {
+  width: 200rpx;
+  height: 200rpx;
+  border: 10rpx solid rgba(0, 0,0, .2);
+  border-radius: 50%;
+}
+.avatar{
+  height: 400rpx;
+  background-color: #FFFFFF;
+}
+.dirvers {
+  height: 20rpx;
+  background-color: #f1f1f1;
+  box-shadow: 0 5rpx 5rpx rgba(0, 0,0, .1) inset;
+}
+
+.option {
+display: flex;
+/* justify-content: space-between; */
+align-items: center;
+position: relative;
+}
+.option_right{
+  position: absolute;
+  right: 30rpx;
+  display: flex;
+  align-items: center;
+  color: #C0C0C0;
+  font-size: 13px;
+}
+
+.option_right::after{
+  content: "";
+  width: 20rpx;
+  height: 20rpx;
+  float: right;
+  border-top: 3rpx solid  #C0C0C0;
+  border-right: 3rpx solid  #C0C0C0;
+  transform:rotate(45deg);
+}
+page {
+  background-color: #f1f1f1;
+}
+
