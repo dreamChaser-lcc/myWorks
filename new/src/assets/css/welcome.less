@@ -1,0 +1,52 @@
+.el-card{
+    color:#DEB185;
+    background-color: #272B34;
+    box-shadow:10px 10px 5px #000 ;
+    border: none;
+}
+.el-table–enable-row-hover .el-table__body tr:hover > td {
+    background-color: rgba(0, 0, 0, 0) !important;
+    }
+.box{
+    background: #272B34;
+    .num{
+        display: flex;
+        flex-wrap: wrap; //等比例分行
+        justify-content: space-between; //两端对齐
+        .el-card{
+            width:30%;
+            margin-bottom:20px ;
+            .detail{
+                height: 30px;
+                line-height: 5px;
+            }
+        }
+    }
+    .ec{
+        display: flex;
+        justify-content: space-between;
+        .el-card{
+            width:48%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+.left-col{
+    // border:1px solid blue;
+    .el-card{
+        height: 260px;
+        margin-bottom:20px;
+      
+        .info_box{
+            display: flex;
+           align-items: center;
+        }
+    }
+}
+.right-col{
+    
+    color: red;
+    // border:1px solid yellow;
+    
+}
