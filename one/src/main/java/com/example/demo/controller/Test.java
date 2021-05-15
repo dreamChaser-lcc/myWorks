@@ -14,7 +14,7 @@ import java.util.Hashtable;
 //表示返回字符串
 @RestController
 public class Test {
-    //访问路径
+    //访问路径  AMQP连接阿里云平台的AMQP并接入数据库
     @RequestMapping("/test")
     public void test() throws Exception {
         //参数说明，请参见上一篇文档：AMQP客户端接入说明。
@@ -64,5 +64,9 @@ public class Test {
         consumer.setMessageListener(demo.messageListener);
 
     }
-
+    //测试是否能成功运行，localhost:9000/testJava
+    @RequestMapping("/testJava")
+    public String testJava (){
+        return "成功运行了";
+    }
 }
