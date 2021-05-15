@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mybatis框架的使用-->
+<!--namespace绑定dao接口的包名-->
+<!--select中id是dao接口的方法名 resultType结果集的类型绑定返回的User的bean(对象)的包名-->
+<mapper namespace="com.example.demo.dao.UserDao">
+    <!--指定的User包类名，具体到.User包的Url，返回结果集类型-->
+    <!-- 查询用户是否存在   -->
+    <select id="getUserByMessage" resultType="com.example.demo.bean.User">
+        SELECT * from user_info
+        WHERE username=#{username}
+        AND password=#{password}
+        AND state='1'
+    </select>
+    <select id="getAllUser" resultType="com.example.demo.bean.User">
+        select  *  from user_info
+        <if test="username != null">
+            Where username like #{username}
+        </if>
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+    <!--    查询数据总数   -->
+    <select id="getUserCounts" resultType="java.lang.Integer">
+        SELECT  count(*) FROM  user_info
+        <if test="username != null and username !=''">
+            Where username like #{username}
+        </if>
+    </select>
+    <!-- 更新语句   -->
+    <update id="getUpdateState">
+        UPDATE user_info set state = #{state} WHERE id = #{id} ;
+    </update>
+    <!-- 保存语句   -->
+    <insert id="addUser">
+        insert into user_info (username,password,contacts,role,state) VALUES (#{username},#{password},#{contacts},#{role},#{state});
+    </insert>
+    <!--   删除   -->
+    <delete id="deleteUser">
+        DELETE  FROM user_info WHERE id = #{id}
+    </delete>
+    <!--  根据id查询 and 修改信息  -->
+    <select id="getUpdateUser" resultType="com.example.demo.bean.User">
+        select * FROM user_info where  id= #{id}
+    </select>
+    <update id="editUser">
+        UPDATE  user_info set username=#{username},password=#{password},contacts=#{contacts} where id=#{id}
+    </update>
+    <!-- Welcome界面   -->
+    <select id="getWcUserCount" resultType="java.lang.Integer">
+        select count(*) From user_info where role='普通用户'
+    </select>
+    <select id="getWcUser" resultType="com.example.demo.bean.User">
+        SELECT * FROM user_info where username=#{username}
+    </select>
+
+    <!-- Map界面   -->
+    <select id="getMapUserCount" resultType="java.lang.Integer">
+        SELECT count(*) FROM user_info WHERE address  like #{address}
+     </select>
+</mapper>

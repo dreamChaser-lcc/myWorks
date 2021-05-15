@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.wxFbDao">
+    <insert id="insertWxFb">
+        INsert into feedBack (username,fbtype,content,contacts,time,state) VALUES (#{username},#{fbtype},#{content},#{contacts},#{time},0);
+    </insert>
+    <select id="getWxFbInfo" resultType="com.example.demo.controller.wxFb.wxFbBean.wxFbReturnBean">
+        select * from feedBack where username=#{username} and state=1
+    </select>
+    <delete id="deleteFb">
+        DELETE FROM feedBack where id=#{id}
+    </delete>
+</mapper>

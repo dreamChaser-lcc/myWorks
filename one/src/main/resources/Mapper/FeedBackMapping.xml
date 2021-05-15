@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.FeedBackDao">
+    <select id="getFB" resultType="com.example.demo.bean.FeedBack" >
+        select  * FROM feedBack
+        where state = 0
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+    <select id="getBeforeFB" resultType="com.example.demo.bean.FeedBack" >
+        select  * FROM feedBack
+         where state = 1
+         LIMIT #{pageStart},#{pageSize}
+    </select>
+    <select id="getFBCounts" resultType="java.lang.Integer">
+      SELECT  count(*) FROM  feedBack
+      <choose>
+          <when test="flag!=true">
+            where state=0;
+          </when>
+          <otherwise>
+              where state=1;
+          </otherwise>
+      </choose>
+    </select>
+<!--    最新查询条数  -->
+    <select id="getCounts" resultType="java.lang.Integer">
+        SELECT  count(*) FROM  feedBack
+        <if test="username != null and username !=''">
+            Where username like #{username}
+        </if>
+    </select>
+<!--    最新查询所有-->
+    <select id="getAllFB" resultType="com.example.demo.bean.FeedBack">
+        select  *  from feedBack
+        <if test="username != null">
+            Where username like #{username}
+        </if>
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+<!--    反馈界面根据条件查询-->
+    <select id="searchResult" resultType="com.example.demo.bean.FeedBack">
+        select * from feedBack
+        Where
+        <if test="state != null">
+        state like #{state} and
+        </if>
+        <if test="fbtype != null">
+        fbtype like #{fbtype} and
+        </if>
+        time like #{time}
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+    <select id="searchCounts" resultType="java.lang.Integer">
+        select count(*) from feedBack
+        Where
+        <if test="state != null">
+        state like #{state} and
+        </if>
+        <if test="fbtype != null">
+        fbtype like #{fbtype} and
+        </if>
+        time like #{time}
+    </select>
+    <update id="editFB">
+        update feedback set fbcontent=#{fbContent},admin=#{admin},time=#{time},state=1 where id=#{id}
+    </update>
+    <delete id="deleteFB">
+         DELETE FROM feedback where id=#{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.wxInfoDao">
+<!--    个人信息查询-->
+    <select id="getWxInfo" resultType="com.example.demo.controller.wxInfo.wxInfoBean.wxInfoBean">
+        SELECT * from user_info WHERE username=#{username}
+    </select>
+<!--    个人信息插入-->
+    <insert id="insertWxInfo">
+        INSERT INTO user_info  (username,eqName,address,contacts,role,state) values (#{username},#{eqName},#{address},#{contacts},"普通用户",1)
+    </insert>
+<!--    个人信息更新-->
+    <update id="updateWxInfo">
+        UPDATE user_info set eqName=#{eqName},address=#{address},contacts=#{contacts} WHERE username=#{username}
+    </update>
+<!--   更新绑定状态 -->
+    <update id="changeState">
+        UPDATE user_info set state=#{state}  WHERE username=#{username}
+    </update>
+</mapper>

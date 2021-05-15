@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.WxDao">
+<!--  第一个页面的数据  -->
+    <select id="wxGetCurrent" resultType="com.example.demo.wxBean.wxCurrent">
+        SELECT * FROM alitest where deviceName=#{eqName} ORDER BY id DESC LIMIT 1
+    </select>
+<!--   第二个页面的温度数据 -->
+    <select id="getDataList" resultType="com.example.demo.wxBean.wxData">
+       SELECT id,deviceName as eqName,wd,smoke,time
+       FROM alitest
+       WHERE  deviceName=#{wxEqName}
+       order by id desc
+    </select>
+<!--    可视化图数据-->
+    <select id="getLegendList" resultType="com.example.demo.wxBean.wxLegend">
+         SELECT wd,SUBSTR(time FROM 12 FOR 2) as hour FROM alitest
+         WHERE
+         deviceName=#{wxEqName} and
+         time between #{startDate} and #{endDate}
+         and substring(time,12,13)=#{index} LIMIT 1
+    </select>
+</mapper>

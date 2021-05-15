@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.EqDao">
+    <insert id="addEq" >
+    INsert into equipment (eqName,state) VALUES (#{eqName},#{state});
+    </insert>
+    <!--  获取全部Eq数据  -->
+    <select id="getALlEq" resultType="com.example.demo.bean.Equipment">
+        select * FROM  equipment
+        <if test="eqName != null">
+        WHERE  eqName like #{eqName}
+        </if>
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+    <!--  获取Eq总条数   -->
+    <select id="getEqCounts" resultType="java.lang.Integer">
+        select count(*) FROM  equipment
+        <if test="eqName != null">
+            WHERE  eqName like #{eqName}
+        </if>
+    </select>
+    <update id="bindEq" >
+        update equipment
+        <choose>
+        <when test="userName != null and userName !=''">
+            set userName=#{userName},state=1
+        </when>
+        <otherwise>
+            set userName=#{userName},state=0
+        </otherwise>
+        </choose>
+         WHERE eqName=#{eqName}
+    </update>
+    <delete id="deleteEq">
+        DELETE FROM equipment where id=#{id}
+    </delete>
+    <update id="removeBindEq">
+        UPDATE equipment set userName='',state=0 where id=#{id}
+    </update>
+
+    <select id="getWcEqCounts" resultType="java.lang.Integer">
+        select count(*) FROM equipment
+        <choose>
+            <when test="flag==1">
+                WHERE state =1
+            </when>
+            <otherwise>
+                WHERE state =0
+            </otherwise>
+        </choose>
+    </select>
+
+<!--  当前实时检测情况的API   -->
+     <select id="getCurrentEqData"  resultType="com.example.demo.bean.CurrentEqData">
+          select * from alitest WHERE deviceName=#{eqName} ORDER BY id desc LIMIT 1
+     </select>
+<!--  查看最新烟雾浓度图例  -->
+    <select id="getSmokeLegend" resultType="java.lang.String">
+        SELECT smoke from alitest WHERE subString(time,11,12)=#{hour} LIMIT 1
+    </select>
+<!--  查看username是否被绑定-->
+    <select id="getBindAble" resultType="com.example.demo.bean.Equipment">
+        select * FROM equipment WHERE username=#{username}
+    </select>
+</mapper>
